@@ -286,7 +286,7 @@ function _SearchTab() {
                         </div>
                         {data.pages !== 0 && pagination}
                         {data.mods.map((m, i) => (
-                            <Button disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit">
+                            <Button href={`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`} target="_blank" disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit">
                                 <div className="flex flex-row gap-3 w-full">
                                     <Image
                                         alt={m.full_name}

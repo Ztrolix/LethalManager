@@ -6,7 +6,7 @@ export default function Settings() {
     return (
         <AppBar>
             <div className="flex justify-center items-center h-screen">
-                <p>No Settings Available</p>
+                <p>Settings Coming Soon!</p>
             </div>
         </AppBar>
     )
