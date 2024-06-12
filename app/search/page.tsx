@@ -286,7 +286,7 @@ function _SearchTab() {
                         </div>
                         {data.pages !== 0 && pagination}
                         {data.mods.map((m, i) => (
-                            <Button href={`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`} target="_blank" disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit">
+                            <Button disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit">
                                 <div className="flex flex-row gap-3 w-full">
                                     <Image
                                         alt={m.full_name}
@@ -300,9 +300,9 @@ function _SearchTab() {
                                     </Image>
                                     <div className="flex flex-col min-w-0 h-24">
                                         <div className="flex flex-row gap-2">
-                                            <a className="font-bold text-xl">{m.name}</a>
+                                            <a href={`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`} target="_blank" className="font-bold text-xl">{m.name}</a>
                                             <a className="text-neutral-400 self-center">~</a>
-                                            <a className="text-blue-400 text-medium self-center">{m.owner}</a>
+                                            <a href={`https://thunderstore.io/c/lethal-company/p/${m.owner}`} target="_blank" className="font-bold text-xl">{m.owner}</a>
                                         </div>
                                         <a className="my-auto line-clamp-2 min-w-0 text-[1rem] text-ellipsis text-neutral-400 text-start text-wrap overflow-hidden"
                                            title={m.versions[0].description}>
