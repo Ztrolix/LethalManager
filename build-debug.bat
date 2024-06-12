@@ -5,6 +5,6 @@ cls
 cargo tauri build --debug
 
 cd src-tauri\target\debug
-start LCManager.exe
+start LethalManager.exe
 
 pause

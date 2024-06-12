@@ -5,6 +5,6 @@ cls
 cargo tauri build
 
 cd src-tauri\target\release
-start LCManager.exe
+start LethalManager.exe
 
 pause
