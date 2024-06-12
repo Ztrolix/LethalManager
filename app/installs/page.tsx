@@ -53,7 +53,7 @@ export default function InstallSelector() {
 			<div className="flex flex-col flex-grow justify-center items-center bg-background-rgb h-full">
 				<div className="flex flex-row items-center gap-3 h-[205px]">
 					{isScanning && <Spinner/>}
-					{!isScanning && scanResult!.installs.length === 0 && <a>No instances found. Try adding one!</a>}
+					{!isScanning && scanResult!.installs.length === 0 && <a>No installs found!</a>}
 					{!isScanning && scanResult!.installs.map((install, i) => (
 						<Button key={i} disableRipple variant="ghost" className={
 								"flex-col p-3 w-40 h-max " +
@@ -87,7 +87,7 @@ export default function InstallSelector() {
 				<div className="flex flex-row gap-3 pt-4">
 					<Button disableRipple variant="ghost" startContent={<i className="ri-search-line"></i>}
 						onPress={scanInstalls}>
-						Scan for installs
+						Check for installs
 					</Button>
 					<Button disableRipple variant="ghost" startContent={<i className="ri-folder-open-line"></i>}
 						onPress={addManualInstall}>

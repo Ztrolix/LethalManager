@@ -44,7 +44,7 @@ export default function TopBar() {
 					}
 					setLastClick(Date.now());
 				}}>
-				<a>Lethal Manager</a>
+				<a>LCManager</a>
 			</div>
 			{selectedInstall && pathname !== '/installs' &&
 				<Button disableRipple variant="ghost" className="flex flex-row bg-background-rgb mr-1 p-1 text-xs"

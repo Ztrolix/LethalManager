@@ -7,7 +7,7 @@
     "distDir": "../out"
   },
   "package": {
-    "productName": "LethalManager",
+    "productName": "LCManager",
     "version": "0.2.1"
   },
   "tauri": {
@@ -79,7 +79,7 @@
         "height": 575,
         "minHeight": 520,
         "resizable": true,
-        "title": "Lethal Manager",
+        "title": "LCManager",
         "width": 1050,
         "minWidth": 880
       }
