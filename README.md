@@ -1,4 +1,4 @@
-# Lethal Company Mod Manager
+# Lethal Manager
 Lethal Manager is a mod management tool designed for Lethal Company, inspired by the popular [Modrinth](https://modrinth.com/) platform.
 
 ## Features
@@ -18,7 +18,7 @@ Lethal Manager is a mod management tool designed for Lethal Company, inspired by
 - [ ] Mod Info
 
 ## Installation
-To install Lethal Manager, visit the [releases page](https://github.com/ZtrolixGit/lcmanager/releases) and download the latest version.
+To install Lethal Manager, visit the [releases page](https://github.com/danisty/LethalManager/releases) and download the latest version.
 
 ## Contributing
 To contribute to Lethal Manager:
