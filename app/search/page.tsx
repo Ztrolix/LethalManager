@@ -306,7 +306,8 @@ function _SearchTab() {
                                             <a className="text-neutral-400 text-medium self-center">{m.owner}</a>
                                         </div>
                                         <a className="my-auto line-clamp-2 min-w-0 text-[1rem] text-ellipsis text-neutral-400 text-start text-wrap overflow-hidden"
-                                           title={m.versions[0].description}>
+                                           title={m.versions[0].description}
+                                        >
                                             {m.versions[0].description}
                                         </a>
                                         <div className="flex flex-row gap-2 overflow-auto scrollbar-hide">
@@ -325,7 +326,9 @@ function _SearchTab() {
                                         <i className="pr-2 ri-refresh-line"></i>
                                         {`Updated ${getDays(m.date_updated)} days ago`}
                                     </div>
-                                    <Button disableRipple className="flex items-center bg-primary px-4 rounded-lg h-full"
+                                    <Button 
+                                        disableRipple 
+                                        className="flex items-center bg-primary px-4 rounded-lg h-full"
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             setSelectedMod(m);
