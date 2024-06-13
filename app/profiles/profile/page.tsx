@@ -79,7 +79,7 @@ function _Profile() {
                             <img alt="" className="rounded-lg size-12" src={convertFileSrc(mod.icon!)} />
                         </picture>
                         <div className="flex flex-col flex-grow items-start pl-1">
-                            <a className="line-clamp-1 font-bold text-lg break-all overflow-ellipsis">{
+                            <a onClick={(e) => { e.stopPropagation(); open(`https://thunderstore.io/c/lethal-company/p/${mod.author}/${mod.name}`) }} className="line-clamp-1 font-bold text-lg break-all overflow-ellipsis cursor-pointer">{
                                 mod.name
                             }</a>
                             <a className="line-clamp-1 text-neutral-300 text-start text-wrap overflow-ellipsis">{
