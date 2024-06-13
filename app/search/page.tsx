@@ -287,7 +287,7 @@ function _SearchTab() {
                         </div>
                         {data.pages !== 0 && pagination}
                         {data.mods.map((m, i) => (
-                            <Button onClick={(e) => { e.stopPropagation(); open(`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`) }} disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit">
+                            <Button disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit" onClick={() => open(`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`)}>
                                 <div className="flex flex-row gap-3 w-full">
                                     <Image
                                         alt={m.full_name}
@@ -326,9 +326,10 @@ function _SearchTab() {
                                         {`Updated ${getDays(m.date_updated)} days ago`}
                                     </div>
                                     <Button disableRipple className="flex items-center bg-primary px-4 rounded-lg h-full"
-                                        onPress={() => {
+                                        onClick={(e) => {
+                                            e.stopPropagation();
                                             setSelectedMod(m);
-                                            download(m.versions[0].full_name, selectedProfile)
+                                            download(m.versions[0].full_name, selectedProfile);
                                         }}>
                                         Install
                                     </Button>
