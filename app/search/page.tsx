@@ -3,7 +3,7 @@
 import "../globals.css"
 import { Image, Button, Checkbox, Chip, Progress, useDisclosure, ModalContent, Modal, Pagination, Select, SelectItem, ModalHeader, ModalFooter } from "@nextui-org/react";
 import { convertFileSrc, invoke } from "@tauri-apps/api/tauri";
-import { open } from '@tauri-apps/api/shell';  // Import the open function from Tauri
+import { open } from '@tauri-apps/api/shell';
 import React, { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { usePersistedState } from "@/app/_utils/state";
 import AppBar from "@/app/_components/appbar";
@@ -287,7 +287,7 @@ function _SearchTab() {
                         </div>
                         {data.pages !== 0 && pagination}
                         {data.mods.map((m, i) => (
-                            <Button disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit">
+                            <Button onClick={(e) => { e.stopPropagation(); open(`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`) }} disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit">
                                 <div className="flex flex-row gap-3 w-full">
                                     <Image
                                         alt={m.full_name}
@@ -301,9 +301,9 @@ function _SearchTab() {
                                     </Image>
                                     <div className="flex flex-col min-w-0 h-24">
                                         <div className="flex flex-row gap-2">
-                                            <a onClick={() => open(`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`)} className="font-bold text-xl text-blue-400 hover:underline cursor-pointer">{m.name}</a>
+                                            <a className="font-bold text-xl">{m.name}</a>
                                             <a className="text-neutral-400 self-center">~</a>
-                                            <a className="text-blue-400 text-medium self-center">{m.owner}</a>
+                                            <a className="text-neutral-400 text-medium self-center">{m.owner}</a>
                                         </div>
                                         <a className="my-auto line-clamp-2 min-w-0 text-[1rem] text-ellipsis text-neutral-400 text-start text-wrap overflow-hidden"
                                            title={m.versions[0].description}>
