@@ -11,6 +11,7 @@ import { useSearchParams } from "next/navigation";
 import { UnlistenFn, listen } from "@tauri-apps/api/event";
 import { Profile } from "../profiles/profile/page";
 import { ProfileInfo } from "../profiles/page";
+import { usePathname, useRouter } from 'next/navigation';
 
 type Data = {
     categories: string[],
@@ -69,6 +70,8 @@ export type Version = {
 };
 
 function _SearchTab() {
+    const router = useRouter();
+
     const params = useSearchParams();
     const selectedProfile: Profile | undefined = params.get('profile') ? JSON.parse(params.get('profile')!) : undefined;
 
@@ -287,7 +290,7 @@ function _SearchTab() {
                         </div>
                         {data.pages !== 0 && pagination}
                         {data.mods.map((m, i) => (
-                            <Button disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit" onClick={() => open(`https://thunderstore.io/c/lethal-company/p/${m.owner}/${m.name}`)}>
+                            <Button disableRipple key={i} className="flex flex-col items-start gap-3 bg-background-rgb p-3 h-fit" onPress={() => router.push('/mod')}>
                                 <div className="flex flex-row gap-3 w-full">
                                     <Image
                                         alt={m.full_name}
