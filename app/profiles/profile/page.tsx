@@ -79,7 +79,7 @@ function _Profile() {
                             <img alt="" className="rounded-lg size-12" src={convertFileSrc(mod.icon!)} />
                         </picture>
                         <div className="flex flex-col flex-grow items-start pl-1">
-                            <a onClick={(e) => { e.stopPropagation(); open(`https://thunderstore.io/c/lethal-company/p/${mod.author}/${mod.name}`) }} className="line-clamp-1 font-bold text-lg break-all overflow-ellipsis cursor-pointer">{
+                            <a onClick={(e) => { e.stopPropagation(); const screenWidth = window.screen.width; const screenHeight = window.screen.height; const left = Math.max(0, (screenWidth - 1050) / 2); const top = Math.max(0, (screenHeight - 575) / 2); window.open(`https://thunderstore.io/c/lethal-company/p/${mod.author}/${mod.name}`, '_blank', `height=575,width=1050,left=${left},top=${top}`);}} className="line-clamp-1 font-bold text-lg break-all overflow-ellipsis cursor-pointer">{
                                 mod.name
                             }</a>
                             <a className="line-clamp-1 text-neutral-300 text-start text-wrap overflow-ellipsis">{
