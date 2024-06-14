@@ -5,11 +5,14 @@ import { Button, Tooltip } from "@nextui-org/react";
 import TopBar from "./topbar";
 import { usePathname, useRouter } from "next/navigation";
 import { ReactNode } from 'react';
+import React, { useEffect } from 'react';
 
-const link = document.createElement('link');
-link.href = 'https://unpkg.com/css.gg@2.0.0/icons/css/software-download.css';
-link.rel = 'stylesheet';
-document.head.appendChild(link);
+const injectStylesheet = (url: string): void => {
+  const link = document.createElement('link');
+  link.href = url;
+  link.rel = 'stylesheet';
+  document.head.appendChild(link);
+};
 
 const Tab = ({ name, icon, selected, setContent }: { name: string, icon: string, selected: boolean, setContent: () => void }) => {
 	return (
@@ -25,6 +28,10 @@ const Tab = ({ name, icon, selected, setContent }: { name: string, icon: string,
 export default function AppBar({ children, noSideBar }: { children: ReactNode, noSideBar?: boolean }) {
 	const router = useRouter();
     const pathname = usePathname();
+
+    useEffect(() => {
+        injectStylesheet('https://unpkg.com/css.gg@2.0.0/icons/css/software-download.css');
+    }, []);
     
     return (
         <main className="flex flex-col max-w-full min-h-screen">
@@ -63,4 +70,4 @@ export default function AppBar({ children, noSideBar }: { children: ReactNode, n
             </div>
         </main>
     );
-  }
+}
