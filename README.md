@@ -15,7 +15,6 @@ Lethal Manager is a mod management tool designed for Lethal Company, inspired by
 - [ ] Import profiles from Thunderstore
 - [ ] Modify BepInEx configurations
 - [ ] Settings
-- [ ] Mod Info
 
 ## Installation
 To install Lethal Manager, visit the [releases page](https://github.com/danisty/LethalManager/releases) and download the latest version.
@@ -29,6 +28,7 @@ To contribute to Lethal Manager:
 To build Lethal Manager from source:
 
 1. Clone the repository
-2. Run the appropriate command/file:
+2. Add Dependencies `npm install next` & `npm install`
+3. Run the appropriate command/file:
   - Release build: `cargo tauri build` or `build-release.bat`
   - Debug build: `cargo tauri build --debug` or `build-debug.bat`
