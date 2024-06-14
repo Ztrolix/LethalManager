@@ -6,6 +6,11 @@ import TopBar from "./topbar";
 import { usePathname, useRouter } from "next/navigation";
 import { ReactNode } from 'react';
 
+const link = document.createElement('link');
+link.href = 'https://unpkg.com/css.gg@2.0.0/icons/css/software-download.css';
+link.rel = 'stylesheet';
+document.head.appendChild(link);
+
 const Tab = ({ name, icon, selected, setContent }: { name: string, icon: string, selected: boolean, setContent: () => void }) => {
 	return (
 		<Tooltip content={name} placement="right" delay={400} closeDelay={10}>
@@ -27,7 +32,7 @@ export default function AppBar({ children, noSideBar }: { children: ReactNode, n
             <div className="flex flex-row flex-grow w-full h-20">
                 {!noSideBar && <div className="flex flex-col gap-2 px-2 pb-2">
                     <Tab name="Profiles"
-                        icon="ri-home-2-line"
+                        icon="ri-home-line"
                         selected={pathname && pathname.includes('/profiles') || false}
                         setContent={() => {
                             router.push('/profiles');
@@ -39,6 +44,12 @@ export default function AppBar({ children, noSideBar }: { children: ReactNode, n
                             router.push('/search');
                         }} />
                     <div className="flex-grow"></div>
+                    <Tab name="Downloads"
+                        icon="gg-software-download"
+                        selected={pathname == '/downloads'}
+                        setContent={() => {
+                            router.push('/downloads');
+                        }} />
                     <Tab name="Settings"
                         icon="ri-settings-line"
                         selected={pathname == '/settings'}
