@@ -1,6 +1,16 @@
 # Lethal Manager
 Lethal Manager is a mod management tool designed for Lethal Company, inspired by the popular [Modrinth](https://modrinth.com/) platform.
 
+## Star History
+
+<a href="https://star-history.com/#danisty/LethalManager&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=danisty/LethalManager&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=danisty/LethalManager&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=danisty/LethalManager&type=Date" />
+ </picture>
+</a>
+
 ## Features
 - Supports game installations from any location, including Steam
 - Allows creating and managing profiles with custom mod sets
